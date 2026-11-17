@@ -1,0 +1,77 @@
+---
+title: Level 2 · Core skills
+description: Collection, infrastructure pivoting, malware triage and campaign analysis. Mandatory for everyone.
+---
+
+import SelfCheck from '../../../components/SelfCheck.astro';
+import Checklist from '../../../components/Checklist.astro';
+import Resources from '../../../components/Resources.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+**Who this is for:** everyone who finished Level 1. **Time:** 3–4 months.
+
+Level 1 taught you how to think about intelligence. Level 2 gives you the hands-on skills to produce it: plan collection, follow infrastructure, pull intelligence out of malware, and connect separate incidents into campaigns.
+
+<SelfCheck list="l2.self" next="tracks/" nextLabel="Level 3 · Tracks" />
+
+## 1. Collection
+
+<Checklist list="l2.collect" title="Collection" />
+
+## 2. Infrastructure analysis and pivoting
+
+The skill that most separates technical CTI analysts. Start from one indicator, find what else the adversary runs, and grade how sure you are about every link.
+
+<Checklist list="l2.infra" title="Infrastructure" />
+
+<Aside type="caution">
+Shared hosting, CDNs and parking pages create false links. One shared IP is a lead, not a conclusion. Write down why you believe each pivot.
+</Aside>
+
+## 3. Malware triage for intelligence
+
+You are not a reverse engineer yet. The goal is to get intelligence out of a sample fast: what it talks to, how it persists, what family it belongs to.
+
+<Checklist list="l2.malware" title="Malware triage" />
+
+<Aside type="danger">
+Only handle live malware in an isolated lab VM, never on your daily machine or a work network. See [Ethics, OPSEC and law](/cti-roadmap/ethics/).
+</Aside>
+
+## 4. Campaigns, clustering and attribution
+
+<Checklist list="l2.campaign" title="Campaign analysis" />
+
+## 5. Reading other people’s intelligence critically
+
+<Checklist list="l2.critique" title="Critique" />
+
+## 6. CTI platforms (as a user)
+
+<Checklist list="l2.platforms" title="Platforms" />
+
+## Deliverables
+
+<Checklist list="l2.deliv" title="Build it" />
+
+### Capstone: MuddyWater case study
+
+Use ESET’s report [MuddyWater: Snakes by the riverbank](https://www.welivesecurity.com/en/eset-research/muddywater-snakes-riverbank/) (December 2025). It documents a campaign against targets in Israel with a confirmed Egyptian victim, new tooling, and a joint operation with a subgroup of OilRig.
+
+Produce a campaign assessment that includes:
+
+- A timeline and victimology.
+- The attack chain mapped to ATT&CK.
+- Infrastructure you can still find from the published indicators, with every link graded.
+- How the actor’s aliases differ across vendors.
+- Detection opportunities.
+- Intelligence gaps and what collection would close them.
+- An attribution assessment with confidence, and what would change your mind.
+
+## Exit criteria
+
+<Checklist list="l2.exit" title="Ready to move on?" />
+
+## Resources
+
+<Resources where="l2" />

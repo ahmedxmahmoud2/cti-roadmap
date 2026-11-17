@@ -1,0 +1,34 @@
+---
+title: Ethics, OPSEC and law
+description: How to collect and share intelligence without putting yourself, your employer or victims at risk.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="danger" title="This is not legal advice">
+Laws differ by country. In Egypt, for example, cybercrime is governed by Law No. 175 of 2018 on combating information technology crimes. Before you interact with threat actors, buy data, or handle stolen data, get advice from a lawyer and written approval from your employer.
+</Aside>
+
+## Research OPSEC
+
+- Use a dedicated research machine or VM, separate from personal and work accounts.
+- Never log in to personal accounts from research infrastructure, and never research from a work network without approval.
+- Sock puppets (research personas) must follow the platform’s rules and your employer’s policy. Never impersonate a real person.
+- Assume anything you click can be seen by the adversary. Use sandboxes and scanners (urlscan.io, sandboxes) instead of visiting live malicious infrastructure directly.
+
+## Malware handling
+
+- Analyse samples only in an isolated lab VM with snapshots and no access to your network.
+- Store samples password-protected (the convention is `infected`) and never email or share them unprotected.
+
+## Underground sources
+
+- Reading public forums and leak sites is different from participating. Do not buy data, pay threat actors or engage in trades without legal and management approval.
+- Stolen data contains real people’s information. Collect only what you need, store it securely, and delete it when you are done.
+- Do not publish personal data from leaks, even to prove a point.
+
+## Sharing
+
+- Respect [TLP](https://www.first.org/tlp/). TLP:AMBER and TLP:RED information never goes into public write-ups or public AI tools.
+- When you find a victim’s data exposed, notify them through a responsible channel (the organisation, its CERT, or your national CERT) rather than publicly.
+- Credit the sources and researchers whose work you build on.

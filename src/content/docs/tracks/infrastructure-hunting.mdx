@@ -1,0 +1,30 @@
+---
+title: Infrastructure hunting
+description: Find, cluster and track adversary infrastructure, often before it is used.
+---
+
+import Checklist from '../../../components/Checklist.astro';
+import Resources from '../../../components/Resources.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+Adversaries reuse hosting providers, certificate patterns, server configurations and registration habits. This track teaches you to turn those habits into queries that find new infrastructure on your own, without waiting for someone else's IOCs.
+
+**Fits:** pentesters, network engineers, SOC analysts who liked pivoting in Level 2.
+
+**Prerequisite:** Levels 1 and 2. **Time:** 3–6 months.
+
+## Topics
+
+<Checklist list="infra.topics" title="Infrastructure hunting" />
+
+<Aside>
+Cloud and identity infrastructure lives here as a module rather than a separate track: cloud-hosted C2, OAuth abuse and token theft follow the same logic of tracking what the adversary operates.
+</Aside>
+
+## Deliverables
+
+<Checklist list="infra.deliv" title="Build it" />
+
+## Resources
+
+<Resources where="infra" />

@@ -1,0 +1,41 @@
+---
+// Renders one list from roadmap.ts as tickable checkboxes.
+import { listById } from '../data/roadmap';
+import { pageLang, ui } from '../data/ui';
+
+interface Props {
+	list: string;
+	title?: string;
+}
+const { list, title } = Astro.props;
+const l = listById[list];
+if (!l) throw new Error(`Unknown checklist: ${list}`);
+const lang = pageLang(Astro);
+const t = ui(lang);
+const ids = l.items.map((i) => i.id).join(',');
+---
+
+<div class="ctir-list not-content" data-kind={l.kind}>
+	<div class="ctir-list-head" data-ctir-count={ids}>
+		{title && <span class="ctir-list-title">{title}</span>}
+		<span class="ctir-list-count" data-ctir-label data-of={t.of}></span>
+		<span class="ctir-bar"><span></span></span>
+	</div>
+	<ul>
+		{
+			l.items.map((item) => (
+				<li>
+					<label>
+						<input type="checkbox" data-ctir={item.id} />
+						<span>{(lang === 'ar' && item.ar) || item.en}</span>
+					</label>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<script>
+	import { init } from './progress';
+	init();
+</script>

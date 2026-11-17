@@ -1,0 +1,112 @@
+---
+// Resource cards. With `where` it shows only that level/track (no filters).
+// Without it, it shows the full library with filters.
+import { resources } from '../data/resources';
+import { groups } from '../data/roadmap';
+import { pageLang, ui, typeLabels } from '../data/ui';
+
+interface Props {
+	where?: string;
+}
+const { where } = Astro.props;
+const lang = pageLang(Astro);
+const t = ui(lang);
+const items = where ? resources.filter((r) => r.where.includes(where)) : resources;
+const types = [...new Set(resources.map((r) => r.type))];
+const costLabel = { free: t.free, freemium: t.freemium, paid: t.paid };
+---
+
+<div class="ctir-res not-content" data-filterable={where ? undefined : ''}>
+	{
+		!where && (
+			<div class="ctir-filters">
+				<label>
+					{t.filterWhere}
+					<select data-f="where">
+						<option value="">{t.filterAll}</option>
+						{groups.map((g) => (
+							<option value={g.id}>{lang === 'ar' ? g.ar : g.en}</option>
+						))}
+					</select>
+				</label>
+				<label>
+					{t.filterCost}
+					<select data-f="cost">
+						<option value="">{t.filterAll}</option>
+						<option value="free">{t.free}</option>
+						<option value="freemium">{t.freemium}</option>
+						<option value="paid">{t.paid}</option>
+					</select>
+				</label>
+				<label>
+					{t.filterType}
+					<select data-f="type">
+						<option value="">{t.filterAll}</option>
+						{types.map((ty) => (
+							<option value={ty}>{typeLabels[ty][lang]}</option>
+						))}
+					</select>
+				</label>
+				<label>
+					{t.filterLang}
+					<select data-f="lang">
+						<option value="">{t.filterAll}</option>
+						<option value="ar">{t.arabic}</option>
+						<option value="en">{t.english}</option>
+					</select>
+				</label>
+			</div>
+		)
+	}
+	<ul class="ctir-res-list">
+		{
+			items.map((r) => (
+				<li data-where={r.where.join(' ')} data-cost={r.cost} data-type={r.type} data-lang={r.lang.join(' ')}>
+					<a href={r.url} target="_blank" rel="noopener">
+						<bdi>{r.title}</bdi>
+					</a>
+					{r.by && (
+						<span class="ctir-by">
+							· <bdi>{r.by}</bdi>
+						</span>
+					)}
+					<p>{(lang === 'ar' && r.noteAr) || r.note}</p>
+					<span class="ctir-tags">
+						<span class={`ctir-tag ctir-${r.cost}`}>{costLabel[r.cost]}</span>
+						<span class="ctir-tag">{typeLabels[r.type][lang]}</span>
+						{r.lang.includes('ar') && <span class="ctir-tag ctir-ar">{t.arabic}</span>}
+						{r.hours && (
+							<span class="ctir-tag">
+								~{r.hours}
+								{t.hours}
+							</span>
+						)}
+					</span>
+				</li>
+			))
+		}
+	</ul>
+	{!where && <p class="ctir-muted" data-empty hidden>{t.noResults}</p>}
+</div>
+
+<script>
+	const root = document.querySelector<HTMLElement>('.ctir-res[data-filterable]');
+	if (root) {
+		const selects = root.querySelectorAll<HTMLSelectElement>('select[data-f]');
+		const apply = () => {
+			const f = Object.fromEntries([...selects].map((s) => [s.dataset.f!, s.value]));
+			let shown = 0;
+			root.querySelectorAll<HTMLElement>('.ctir-res-list > li').forEach((li) => {
+				const ok =
+					(!f.where || li.dataset.where!.split(' ').includes(f.where)) &&
+					(!f.cost || li.dataset.cost === f.cost) &&
+					(!f.type || li.dataset.type === f.type) &&
+					(!f.lang || li.dataset.lang!.split(' ').includes(f.lang));
+				li.hidden = !ok;
+				if (ok) shown++;
+			});
+			root.querySelector<HTMLElement>('[data-empty]')!.hidden = shown > 0;
+		};
+		selects.forEach((s) => s.addEventListener('change', apply));
+	}
+</script>

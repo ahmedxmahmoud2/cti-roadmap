@@ -1,0 +1,44 @@
+---
+// A self-check list. When every box is ticked it offers a jump to the next level.
+import { listById } from '../data/roadmap';
+import { pageLang, ui, localHref } from '../data/ui';
+
+interface Props {
+	list: string;
+	next: string; // href relative to the site root, e.g. "levels/level-1/"
+	nextLabel: string;
+}
+const { list, next, nextLabel } = Astro.props;
+const l = listById[list];
+const lang = pageLang(Astro);
+const t = ui(lang);
+const ids = l.items.map((i) => i.id).join(',');
+---
+
+<div class="ctir-self not-content" data-ctir-count={ids}>
+	<div class="ctir-self-head">
+		<strong>{t.selfTitle}</strong>
+		<span class="ctir-list-count" data-ctir-label data-of={t.of}></span>
+	</div>
+	<p class="ctir-muted">{t.selfHint}</p>
+	<ul>
+		{
+			l.items.map((item) => (
+				<li>
+					<label>
+						<input type="checkbox" data-ctir={item.id} />
+						<span>{(lang === 'ar' && item.ar) || item.en}</span>
+					</label>
+				</li>
+			))
+		}
+	</ul>
+	<p class="ctir-self-done">
+		{t.selfDone} <a href={localHref(lang, next)}>{nextLabel}</a>
+	</p>
+</div>
+
+<script>
+	import { init } from './progress';
+	init();
+</script>
