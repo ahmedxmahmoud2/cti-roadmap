@@ -1,0 +1,51 @@
+name: Suggest a resource
+description: Suggest a course, book, lab, tool or report for the roadmap
+labels: [resource]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link
+    validations:
+      required: true
+  - type: dropdown
+    id: cost
+    attributes:
+      label: Cost
+      options: [Free, Free tier, Paid]
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options: [Course, Book, Paper, Lab, Tool, Reading, Video, Report, Standard]
+    validations:
+      required: true
+  - type: checkboxes
+    id: lang
+    attributes:
+      label: Language
+      options:
+        - label: English
+        - label: Arabic
+  - type: input
+    id: where
+    attributes:
+      label: Where does it fit?
+      description: Which step of the path (0–10)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it good?
+      description: One or two sentences
+    validations:
+      required: true
