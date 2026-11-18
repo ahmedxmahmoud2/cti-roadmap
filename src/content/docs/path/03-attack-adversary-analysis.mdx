@@ -1,0 +1,57 @@
+---
+title: 3 · MITRE ATT&CK and adversary analysis
+description: Use ATT&CK to analyse adversary behaviour and connect incidents into campaigns.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> about 4 weeks</span></div>
+
+The goal is not to memorise ATT&CK techniques. It is to use ATT&CK to analyse how an adversary behaves.
+
+## Study from
+
+<Course title="Using ATT&CK for Cyber Threat Intelligence" url="https://attack.mitre.org/resources/learn-more-about-attack/training/cti/" by="MITRE" cost="free" time="~4 hours">
+Five modules of videos and exercises from the ATT&CK team: mapping finished reports and raw data to ATT&CK, then comparing groups to find defensive priorities.
+</Course>
+
+<Course title="ATT&CK Groups" url="https://attack.mitre.org/groups/" by="MITRE" cost="free">
+Your reference for every group, its techniques and the reports behind them.
+</Course>
+
+**Tool:** [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to build and compare technique layers.
+
+## What you will learn
+
+### The ATT&CK framework
+
+Tactics, techniques, sub-techniques, groups, software, campaigns, mitigations and detection strategies. Understand the chain: threat actor → campaign → malware → technique → detection.
+
+### Adversary TTP analysis
+
+Analyse each stage of an attack: initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, lateral movement, collection, command and control, exfiltration and impact.
+
+### Campaign analysis
+
+Link several incidents or reports into one campaign using infrastructure overlap, malware and code similarities, TTP similarities, targeting patterns, operational timing and campaign artifacts.
+
+One shared technique is not enough to prove the same group is behind two attacks.
+
+## Project: campaign analysis
+
+Analyse a real APT campaign and produce:
+
+- A campaign timeline.
+- Targeted victims.
+- The attack chain.
+- Malware used.
+- Infrastructure.
+- An ATT&CK mapping with a Navigator layer.
+- Detection opportunities.
+- Intelligence gaps.
+- An attribution assessment.
+
+## You are ready to move on when
+
+- You can map a report to ATT&CK without guessing.
+- You can explain why two incidents do or do not belong to the same campaign.

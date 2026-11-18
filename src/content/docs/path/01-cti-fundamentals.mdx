@@ -1,0 +1,79 @@
+---
+title: 1 · CTI fundamentals and the intelligence lifecycle
+description: What intelligence is, how the lifecycle works, how to write requirements, and how to analyse with stated confidence.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> about 3 weeks</span></div>
+
+Here you start understanding threat intelligence as a full process, not a feed of indicators.
+
+## Study from
+
+<Course title="Cyber Threat Intelligence 101" url="https://arcx.io/courses/cyber-threat-intelligence-101" by="arcX" cost="free" time="4+ hours" arabic>
+The best free starting course. Covers the intelligence cycle, intelligence levels and the main models, with practice questions.
+</Course>
+
+<Course title="A Cyber Threat Intelligence Self-Study Plan: Part 1" url="https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a" by="Katie Nickels" cost="free">
+A reading plan from one of the field's best-known practitioners, with exercises after each topic.
+</Course>
+
+<Course title="FIRST CTI SIG Curriculum" url="https://www.first.org/global/sigs/cti/curriculum/" by="FIRST" cost="free">
+Priority intelligence requirements, source evaluation, analysis techniques and the standard for expressing uncertainty.
+</Course>
+
+<Course title="Psychology of Intelligence Analysis" url="https://www.cia.gov/resources/csi/static/Pyschology-of-Intelligence-Analysis.pdf" by="Richards J. Heuer Jr." cost="free">
+The classic book on cognitive bias and Analysis of Competing Hypotheses. Read it slowly.
+</Course>
+
+## What you will learn
+
+### Understanding CTI
+
+The difference between cyber threat intelligence, threat hunting, incident response, digital forensics, OSINT, security research and threat monitoring.
+
+The four levels of intelligence:
+
+- **Strategic:** supports management decisions. Example: is the financial sector in our region increasingly targeted by ransomware groups?
+- **Operational:** campaigns, attacks and threat actors. Example: an APT campaign targeting banks with phishing and custom malware.
+- **Tactical:** the TTPs used in an attack. Example: a group using DLL side-loading and scheduled tasks for persistence.
+- **Technical:** directly usable data. Example: IPs, domains, hashes, URLs, YARA rules.
+
+### The intelligence lifecycle
+
+Planning and direction, collection, processing and exploitation, analysis and production, dissemination, feedback. In practice it is not linear: analysis often shows you need more collection.
+
+### Intelligence requirements
+
+Learn to write Priority Intelligence Requirements (PIRs), Specific Intelligence Requirements (SIRs), collection requirements, intelligence gaps and essential elements of information.
+
+Example PIR: *What APT groups are targeting financial organizations in the Middle East?* Break it into smaller questions:
+
+- Which groups have targeted this sector?
+- Which malware families are associated with them?
+- What infrastructure do they use?
+- Which initial access techniques have been observed?
+- What are their latest campaigns?
+
+### Intelligence analysis
+
+Source reliability, information credibility, confidence levels, intelligence gaps, evidence correlation, alternative hypotheses, analytical bias and structured analytic techniques. Focus on:
+
+- Analysis of Competing Hypotheses (ACH).
+- Link analysis.
+- Timeline analysis.
+- Hypothesis testing.
+- Confidence assessment.
+
+## Project: APT intelligence profile
+
+Pick one APT group and write an intelligence profile with: overview, known aliases, targeted industries and countries, motivation, known campaigns, malware families, infrastructure, TTPs, sources and a confidence assessment.
+
+Every statement needs a source, and you must separate facts from assessments. Use the [Threat Actor Profile Guide](https://www.curatedintel.org/2023/07/the-threat-actor-profile-guide-for-cti.html) from Curated Intelligence as your template. You will go much deeper on profiling in step 6.
+
+## You are ready to move on when
+
+- You can turn a business question into PIRs and smaller collectable questions.
+- You can grade a source and a piece of information, and state a judgment with a confidence level.
+- Your APT profile cites a source for every claim.

@@ -9,7 +9,7 @@ export default defineConfig({
 		starlight({
 			title: 'CTI Roadmap',
 			description:
-				'An open, track-based Cyber Threat Intelligence roadmap: from zero to advanced CTI analyst, with self-checks, progress tracking and a regional (MENA) focus.',
+				'A step-by-step Cyber Threat Intelligence path, from zero to advanced CTI analyst, with the course to study for every step.',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: 'English', lang: 'en' },
@@ -23,45 +23,30 @@ export default defineConfig({
 			},
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
+				{ label: 'Start here', translations: { ar: 'ابدأ من هنا' }, slug: 'index' },
 				{
-					label: 'Start',
-					translations: { ar: 'ابدأ' },
+					label: 'The path',
+					translations: { ar: 'المسار' },
 					items: [
-						{ label: 'Start here', translations: { ar: 'ابدأ من هنا' }, slug: 'start-here' },
-						{ label: 'My progress', translations: { ar: 'تقدّمي' }, slug: 'progress' },
-					],
-				},
-				{
-					label: 'Levels',
-					translations: { ar: 'المستويات' },
-					items: [
-						{ label: 'Level 0 · Foundations', slug: 'levels/level-0' },
-						{ label: 'Level 1 · CTI core', slug: 'levels/level-1' },
-						{ label: 'Level 2 · Core skills', slug: 'levels/level-2' },
-					],
-				},
-				{
-					label: 'Level 3 · Tracks',
-					translations: { ar: 'Level 3 · التخصصات' },
-					items: [
-						{ label: 'Choose your tracks', translations: { ar: 'اختر تخصصك' }, slug: 'tracks' },
-						{ label: 'Infrastructure hunting', slug: 'tracks/infrastructure-hunting' },
-						{ label: 'Malware intelligence', slug: 'tracks/malware-intelligence' },
-						{ label: 'Threat hunting and detection', slug: 'tracks/hunting-detection' },
-						{ label: 'Dark web and digital risk', slug: 'tracks/dark-web-drp' },
-						{ label: 'Strategic and geopolitical', slug: 'tracks/strategic-geopolitical' },
-						{ label: 'CTI engineering', slug: 'tracks/cti-engineering' },
-						{ label: 'Intel-led red teaming', slug: 'tracks/adversary-emulation' },
+						{ label: '0 · Technical foundations', slug: 'path/00-foundations' },
+						{ label: '1 · CTI fundamentals', slug: 'path/01-cti-fundamentals' },
+						{ label: '2 · OSINT and collection', slug: 'path/02-osint-collection' },
+						{ label: '3 · ATT&CK and adversary analysis', slug: 'path/03-attack-adversary-analysis' },
+						{ label: '4 · Malware intelligence', slug: 'path/04-malware-intelligence' },
+						{ label: '5 · Hunting and detection', slug: 'path/05-hunting-detection' },
+						{ label: '6 · Actor profiling and attribution', slug: 'path/06-actor-tracking-attribution' },
+						{ label: '7 · Dark web and underground', slug: 'path/07-dark-web' },
+						{ label: '8 · CTI engineering', slug: 'path/08-cti-engineering' },
+						{ label: '9 · Specialization', slug: 'path/09-specialization' },
+						{ label: '10 · Portfolio and readiness', slug: 'path/10-portfolio' },
 					],
 				},
 				{
 					label: 'Reference',
 					translations: { ar: 'مراجع' },
 					items: [
-						{ label: 'Portfolio', translations: { ar: 'الـ Portfolio' }, slug: 'portfolio' },
-						{ label: 'Resource library', translations: { ar: 'مكتبة المصادر' }, slug: 'resources' },
-						{ label: 'MENA threat landscape', translations: { ar: 'تهديدات المنطقة' }, slug: 'mena' },
 						{ label: 'Ethics, OPSEC and law', translations: { ar: 'الأخلاقيات والقانون' }, slug: 'ethics' },
+						{ label: 'MENA threat landscape', translations: { ar: 'تهديدات المنطقة' }, slug: 'mena' },
 						{ label: 'Certifications (optional)', translations: { ar: 'الشهادات (اختياري)' }, slug: 'certifications' },
 						{ label: 'Glossary', translations: { ar: 'المصطلحات' }, slug: 'glossary' },
 						{ label: 'Contributing', translations: { ar: 'ساهم' }, slug: 'contributing' },

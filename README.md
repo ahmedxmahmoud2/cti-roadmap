@@ -1,6 +1,6 @@
 # CTI Roadmap
 
-An open, track-based Cyber Threat Intelligence roadmap: from zero to advanced CTI analyst, with self-checks, progress tracking, portfolio deliverables and a MENA focus. English first, with Arabic.
+A step-by-step Cyber Threat Intelligence path, from zero to advanced CTI analyst, with the course to study for every step. English first, with Arabic.
 
 **Site:** https://ahmedxmahmoud2.github.io/cti-roadmap/
 
@@ -13,10 +13,10 @@ npm run dev
 
 ## Structure
 
-- `src/data/roadmap.ts` — every checklist item (stable ids; never rename them)
-- `src/data/resources.ts` — the resource library
+- `src/content/docs/path/` — one page per step of the path
+- `src/data/path.ts` — the list of steps and the starting point for each background
 - `src/content/docs/` — English pages; `src/content/docs/ar/` — Arabic pages
-- `src/components/` — interactive pieces (entry wizard, checklists, progress, resource filters)
+- `src/components/` — the background picker and the course card
 
 Built with [Astro Starlight](https://starlight.astro.build/). Deployed to GitHub Pages on every push to `main`.
 

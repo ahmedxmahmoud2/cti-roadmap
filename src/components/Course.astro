@@ -1,0 +1,28 @@
+---
+// One course or resource to study from.
+import { pageLang, ui } from '../data/ui';
+
+interface Props {
+	title: string;
+	url: string;
+	by?: string;
+	cost: 'free' | 'freemium' | 'paid';
+	time?: string;
+	arabic?: boolean;
+}
+const { title, url, by, cost, time, arabic } = Astro.props;
+const t = ui(pageLang(Astro));
+---
+
+<div class="ctir-course not-content">
+	<div class="ctir-course-head">
+		<a href={url} target="_blank" rel="noopener"><bdi>{title}</bdi></a>
+		{by && <span class="ctir-by"><bdi>{by}</bdi></span>}
+	</div>
+	<div class="ctir-course-body"><slot /></div>
+	<div class="ctir-tags">
+		<span class={`ctir-tag ctir-${cost}`}>{t[cost]}</span>
+		{time && <span class="ctir-tag">{time}</span>}
+		{arabic && <span class="ctir-tag ctir-ar">{t.arabic}</span>}
+	</div>
+</div>
