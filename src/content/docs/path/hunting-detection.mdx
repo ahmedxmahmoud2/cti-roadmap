@@ -1,19 +1,24 @@
 ---
-title: 7 · Threat hunting and detection engineering
-description: Connect CTI to SOC operations by turning intelligence into hunts and detection rules.
+title: 7 · Hunting and detection basics for CTI
+description: Enough threat hunting and detection engineering to work with the teams who use your intelligence.
 ---
 
 import Course from '../../../components/Course.astro';
+import { Aside } from '@astrojs/starlight/components';
 
-<div class="ctir-meta"><span><strong>Time:</strong> 5–6 weeks</span></div>
+<div class="ctir-meta"><span><strong>Time:</strong> 2–3 weeks</span></div>
 
-The intelligence you produce must be usable for detection and threat hunting. This step connects CTI to SOC operations.
+<Aside type="tip" title="Basic knowledge is enough">
+You are not training to be a threat hunter or a detection engineer here. You work next to them: your intelligence feeds their hunts and rules, and what they find feeds your analysis. You need enough to speak their language, turn a report into hypotheses they can use, and read or write a basic Sigma rule. Going deep is an option in step 9.
+</Aside>
 
 ## Study from
 
 <Course title="TTP-Based Threat Hunting and Detection Engineering" url="https://attack.mitre.org/resources/learn-more-about-attack/training/threat-hunting" by="MITRE" cost="free">
 Six modules from the ATT&CK team: hunting fundamentals, developing hypotheses, data requirements, collection gaps, implementing and testing analytics, and running the hunt.
 </Course>
+
+For this step, focus on the first modules: hunting fundamentals, developing hypotheses and data requirements.
 
 <Course title="eCTHPv2 Prep" url="https://netriders.academy/courses/threat-hunting-professional/" by="Netriders" arabic>
 Threat hunting explained in Arabic: terminology, threat intelligence, IOCs and YARA, hunting hypotheses, then hunting on the network and the endpoint.
@@ -31,7 +36,7 @@ Threat hunting explained in Arabic: terminology, threat intelligence, IOCs and Y
 
 After a relevant report, you give the hunting team TTP-based hypotheses, and sometimes write the Sigma rule yourself. The useful part is the feedback loop: what fired, what was noise, and what that tells you about the threat.
 
-## What you will learn
+## What you need to know
 
 ### Threat hunting methodology
 
@@ -50,22 +55,11 @@ Sigma, YARA and Suricata rules. Query languages: KQL, SPL, EQL and CrowdStrike F
 
 Wazuh, Security Onion, Splunk, Microsoft Sentinel, CrowdStrike Falcon, Elastic Security.
 
-## Project: hunting package
+## Project: from report to hunt
 
-Pick an APT group and derive five hunting hypotheses from its TTPs. Example: *the adversary may use PowerShell to execute encoded commands and establish persistence.*
-
-For each hypothesis:
-
-- Define the required telemetry and data sources.
-- Write the hunting query.
-- Test it on lab logs and analyse the results.
-- Identify false positives.
-- Write the detection logic.
-- Map it to ATT&CK.
-
-Do not stop at "this APT uses PowerShell". You must be able to detect it.
+Take one threat report and turn it into three hunting hypotheses. Example: *the adversary may use PowerShell to execute encoded commands and establish persistence.* For each one, name the log source it needs and write a simple query or Sigma rule. Write it as you would hand it to a SOC team.
 
 ## You are ready to move on when
 
-- You can turn an actor's TTPs into hypotheses, queries and Sigma rules.
-- You can explain the false positives your rules will produce.
+- You can turn a report's TTPs into hypotheses a hunting team can use.
+- You can read a Sigma rule and explain what it detects and where it might be noisy.
