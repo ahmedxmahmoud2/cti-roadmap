@@ -6,7 +6,7 @@ interface Props {
 	title: string;
 	url: string;
 	by?: string;
-	cost: 'free' | 'freemium' | 'paid';
+	cost?: 'free' | 'freemium' | 'paid';
 	time?: string;
 	arabic?: boolean;
 }
@@ -21,7 +21,7 @@ const t = ui(pageLang(Astro));
 	</div>
 	<div class="ctir-course-body"><slot /></div>
 	<div class="ctir-tags">
-		<span class={`ctir-tag ctir-${cost}`}>{t[cost]}</span>
+		{cost && <span class={`ctir-tag ctir-${cost}`}>{t[cost]}</span>}
 		{time && <span class="ctir-tag">{time}</span>}
 		{arabic && <span class="ctir-tag ctir-ar">{t.arabic}</span>}
 	</div>

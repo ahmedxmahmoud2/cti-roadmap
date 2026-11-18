@@ -1,0 +1,52 @@
+---
+title: 3 · OSINT and infrastructure pivoting
+description: Collect in an organised way, investigate domains, IPs and certificates, and pivot across adversary infrastructure.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> 4–5 weeks</span></div>
+
+Here you learn to collect methodically. Infrastructure pivoting is one of the skills that most separates a technical CTI analyst.
+
+## Study from
+
+<Course title="Open-Source Intelligence (OSINT) Fundamentals" url="https://academy.tcm-sec.com/courses/category/blue-team" by="TCM Security · Heath Adams" cost="paid">
+A practical OSINT course: search techniques, people and organisation research, and tooling. Part of the TCM Academy subscription.
+</Course>
+
+<details>
+<summary>Want more? (optional)</summary>
+
+- [A Cyber Threat Intelligence Self-Study Plan: Part 2](https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-2-d04b7a529d36), Katie Nickels. Free. OSINT for CTI and pivoting on infrastructure, with exercises.
+- [Online Investigations Toolkit](https://bellingcat.gitbook.io/toolkit), Bellingcat. A catalogue of research tools with guides. Use it as a reference.
+
+</details>
+
+## What you will learn
+
+### Technical OSINT
+
+- **Domains:** registration, registrar, nameservers, DNS history, MX records, SPF/DKIM/DMARC, subdomains.
+- **IPs:** ASN, BGP, hosting providers, reputation, the limits of geolocation.
+- **Certificates:** Certificate Transparency logs, SAN analysis, certificate reuse.
+
+**Tools:** Shodan, Censys, FOFA, VirusTotal, urlscan.io, crt.sh, SecurityTrails.
+
+### Infrastructure pivoting
+
+Finding one suspicious domain is not enough. Learn to pivot:
+
+- Domain → IP → other domains on the same IP.
+- Domain → certificate → related domains.
+- IP → ASN and hosting provider.
+- Favicon hash, HTTP headers or TLS fingerprint (JARM, JA3/JA4) → similar servers.
+
+## Project: infrastructure hunting
+
+Pick a published APT campaign and start from one known domain or IP. Pivot through passive DNS, certificates and hosting, draw an infrastructure graph, and mark which links are confirmed and which are possible. Write it up using what you learned in step 2.
+
+## You are ready to move on when
+
+- Starting from one indicator, you can find related infrastructure on your own.
+- Every link in your graph has evidence and a stated confidence.

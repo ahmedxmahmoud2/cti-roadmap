@@ -1,0 +1,64 @@
+---
+title: 0 · Technical foundations
+description: Networking, security basics, operating systems and scripting, so you understand the attack itself and not just its description.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> 3–6 months from zero, 2–4 weeks if you only need a refresh</span></div>
+
+Before CTI you need enough technical understanding to follow the attack itself, not just read a description of it. Each area below has one course. Take it end to end, then move on.
+
+If you already work in SOC, IT or pentesting, skim this step and only fill the gaps.
+
+## 1. Networking
+
+<Course title="CompTIA Network+ (N10-009) full video course" url="https://www.professormesser.com/?p=632187" by="Professor Messer" cost="free" time="87 videos · ~13 hours">
+The whole Network+ syllabus, free. Watch all of it, in order.
+</Course>
+
+**After the course,** make sure you understand the networking topics CTI relies on most. You will meet them again in later steps:
+
+- DNS tunneling, fast flux DNS and domain generation algorithms (DGA).
+- Domain fronting.
+- TLS fingerprinting: JA3, JA4, JARM.
+- C2 communication patterns.
+
+**Practice:** the exercises on [Malware-Traffic-Analysis.net](https://www.malware-traffic-analysis.net/training-exercises.html) are real infection PCAPs with answers. Use Wireshark.
+
+## 2. Security fundamentals
+
+<Course title="CompTIA Security+ (SY0-701) full video course" url="https://www.professormesser.com/?p=631902" by="Professor Messer" cost="free">
+Threats, attacks, architecture, operations and governance.
+</Course>
+
+<Course title="CompTIA Security+ شرح عربي" url="https://netriders.academy/courses/security/" by="Netriders · Ahmed Sultan" cost="free" time="52 lessons" arabic>
+The full Security+ syllabus explained in Arabic, with labs. This is the SY0-601 version, which is free on the Netriders YouTube channel. The newer SY0-701 course is on their site.
+</Course>
+
+## 3. Operating systems
+
+<Course title="Pre Security learning path" url="https://tryhackme.com/path/outline/presecurity" by="TryHackMe" cost="freemium">
+Hands-on Linux and Windows fundamentals in the browser.
+</Course>
+
+Make sure you understand processes, services and scheduled tasks, the Windows registry and event logs, PowerShell, Linux permissions, cron and logs, and where each system keeps persistence.
+
+## 4. Scripting
+
+<Course title="Automate the Boring Stuff with Python" url="https://automatetheboringstuff.com/" by="Al Sweigart" cost="free">
+Free to read online. Read the first half, then the chapters on web scraping, JSON and CSV.
+</Course>
+
+You do not need to be a software engineer. You need to call an API, parse JSON and automate your own repetitive work.
+
+## Project: IOC enrichment tool
+
+Build a Python tool that takes an IP, domain or hash, validates it, queries the VirusTotal and AbuseIPDB APIs, and outputs a JSON report. Put it on GitHub with a README.
+
+## You are ready to move on when
+
+- You can explain what happens, protocol by protocol, when you open a website.
+- You can follow a TCP or HTTP stream in a PCAP.
+- You know where Windows and Linux keep processes, persistence and logs.
+- Your enrichment tool works.

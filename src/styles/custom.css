@@ -145,3 +145,19 @@
 	background: var(--sl-color-accent-low);
 	color: var(--sl-color-accent-high);
 }
+
+/* ── optional extras ── */
+.sl-markdown-content details {
+	margin: 0.9rem 0;
+	padding: 0.6rem 1rem;
+	border: 1px dashed var(--sl-color-gray-5);
+	border-radius: 0.6rem;
+}
+.sl-markdown-content details summary {
+	cursor: pointer;
+	color: var(--sl-color-gray-2);
+	font-size: var(--sl-text-sm);
+}
+.sl-markdown-content details[open] summary {
+	margin-bottom: 0.4rem;
+}

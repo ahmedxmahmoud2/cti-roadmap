@@ -1,0 +1,64 @@
+---
+title: 1 · CTI fundamentals and ATT&CK
+description: What intelligence is, how the lifecycle works, how to write requirements, and how to describe adversary behaviour with ATT&CK.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> 4–5 weeks</span></div>
+
+Here you start understanding threat intelligence as a full process, not a feed of indicators. You also learn ATT&CK, because it is the language every report you read from now on is written in.
+
+## Study from
+
+<Course title="Cyber Threat Intelligence 101" url="https://arcx.io/courses/cyber-threat-intelligence-101" by="arcX" cost="free" time="4+ hours" arabic>
+The intelligence cycle, intelligence levels and the main models, with practice questions. Has Arabic subtitles.
+</Course>
+
+<Course title="Using ATT&CK for Cyber Threat Intelligence" url="https://attack.mitre.org/resources/learn-more-about-attack/training/cti/" by="MITRE" cost="free" time="~4 hours">
+Five short modules from the ATT&CK team: mapping reports to ATT&CK, then comparing groups. Take it after CTI 101.
+</Course>
+
+<details>
+<summary>Want more? (optional)</summary>
+
+- [A Cyber Threat Intelligence Self-Study Plan: Part 1](https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a), Katie Nickels. A reading plan with exercises.
+- [FIRST CTI SIG Curriculum](https://www.first.org/global/sigs/cti/curriculum/). Requirements, source evaluation and analysis techniques.
+- [Psychology of Intelligence Analysis](https://www.cia.gov/resources/csi/static/Pyschology-of-Intelligence-Analysis.pdf), Richards J. Heuer Jr. The classic book on cognitive bias and Analysis of Competing Hypotheses.
+
+</details>
+
+## What you will learn
+
+### Understanding CTI
+
+The difference between CTI, threat hunting, incident response, forensics and OSINT. The four levels of intelligence:
+
+- **Strategic:** supports management decisions. Example: is the financial sector in our region increasingly targeted by ransomware groups?
+- **Operational:** campaigns and threat actors. Example: an APT campaign targeting banks with phishing and custom malware.
+- **Tactical:** the TTPs used in an attack. Example: a group using DLL side-loading for persistence.
+- **Technical:** directly usable data: IPs, domains, hashes, YARA rules.
+
+### The lifecycle and requirements
+
+Planning and direction, collection, processing, analysis, dissemination, feedback. Learn to write Priority Intelligence Requirements (PIRs) and break them into collectable questions.
+
+Example PIR: *What APT groups are targeting financial organizations in the Middle East?* Smaller questions: which groups, which malware, what infrastructure, which initial access techniques, which latest campaigns.
+
+### Analysis and confidence
+
+Source reliability, information credibility, confidence levels, intelligence gaps, and Analysis of Competing Hypotheses (ACH). Always separate what you observed from what you assess.
+
+### MITRE ATT&CK
+
+Tactics, techniques, sub-techniques, groups, software and campaigns. Use [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to build a technique layer for a group. One shared technique does not prove two attacks come from the same group.
+
+## Project: map a report
+
+Take one public APT report from a vendor. Write the PIRs it answers, map every behaviour in it to ATT&CK, and build a Navigator layer. Mark which statements in the report are facts and which are assessments.
+
+## You are ready to move on when
+
+- You can turn a business question into PIRs and smaller collectable questions.
+- You can map a report to ATT&CK without guessing.
+- You can state a judgment with a confidence level and explain why.

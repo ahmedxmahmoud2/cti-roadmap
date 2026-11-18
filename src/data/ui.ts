@@ -8,7 +8,7 @@ const strings = {
 		free: 'Free',
 		freemium: 'Free tier',
 		paid: 'Paid',
-		arabic: 'Arabic subtitles or audio',
+		arabic: 'Arabic',
 	},
 	ar: {
 		wizardQ: 'إنت جاي منين؟',
@@ -18,7 +18,7 @@ const strings = {
 		free: 'مجاني',
 		freemium: 'فيه جزء مجاني',
 		paid: 'مدفوع',
-		arabic: 'فيه عربي',
+		arabic: 'بالعربي',
 	},
 } as const;
 

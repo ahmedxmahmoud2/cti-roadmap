@@ -1,0 +1,62 @@
+---
+title: 8 · Platforms and automation
+description: Understand how intelligence data is modelled, stored, correlated and shared, and build your own pipeline.
+---
+
+import Course from '../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>Time:</strong> about 6 weeks</span></div>
+
+You will probably use a platform like MISP or OpenCTI from your first job. Here you go further: understand how data comes in, gets processed and correlated, and turns into usable intelligence.
+
+## Study from
+
+<Course title="STIX and TAXII documentation" url="https://oasis-open.github.io/cti-documentation/" by="OASIS" cost="free">
+The specifications, with readable introductions and examples. STIX is how CTI is represented; TAXII is how it is exchanged.
+</Course>
+
+<details>
+<summary>Want more? (optional)</summary>
+
+- [MISP documentation and training](https://www.misp-project.org/documentation/), MISP project and CIRCL, including PyMISP.
+- [OpenCTI documentation](https://docs.opencti.io/), Filigran. Data model, connectors and the API.
+
+</details>
+
+## What you will learn
+
+### Intelligence data modeling
+
+STIX 2.1, TAXII 2.1, the MISP data model, STIX objects and relationships, observables, indicators, malware, threat actor, campaign and report objects, confidence and validity.
+
+### MISP
+
+Events, attributes, objects, galaxies, taxonomies, warning lists, correlation, feeds, sharing groups, API integration, PyMISP.
+
+### OpenCTI
+
+The knowledge graph, threat actor modeling, campaign relationships, intrusion sets, observables, indicators, reports, external references, connectors, ingestion pipelines, import and export, graph analysis, the API and STIX 2.1 integration.
+
+### CTI automation
+
+With Python, build: IOC collection and enrichment pipelines, threat feed integration, deduplication, normalisation, expiration management, confidence scoring, automated correlation, report generation, and OpenCTI and MISP integration.
+
+### CTI data quality
+
+Duplicate indicators, false positives, stale IOCs, expired infrastructure, incorrect attribution, source reliability, data provenance, confidence, indicator revocation and relationship validation. Never treat an IOC as malicious just because it appears in a feed.
+
+## Project: build your own CTI pipeline
+
+1. **External sources:** OSINT, threat feeds, reports, APIs.
+2. **Python collection and processing:** parsing, normalisation, deduplication.
+3. **Enrichment and correlation:** reputation, relationships, context.
+4. **MISP** for IOC management.
+5. **OpenCTI** as the knowledge graph.
+6. **Operational output:** SIEM, XDR, threat hunting, client reports.
+
+Done well, this is one of the strongest projects in your portfolio.
+
+## You are ready to move on when
+
+- You can model an actor, a campaign and their indicators in STIX.
+- Your pipeline ingests, deduplicates, enriches and expires data on its own.
