@@ -1,0 +1,66 @@
+---
+title: 4 · الـ Dark Web والـ Underground
+description: افهم أسواق الـ cybercrime وتسريب الـ credentials والـ ransomware والـ brand abuse، واجمع منها بأمان.
+---
+
+import Course from '../../../../components/Course.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 4–5 أسابيع</span></div>
+
+في منطقتنا، تسريبات الـ credentials ومراقبة الـ brand والـ ransomware leak sites غالباً بتكون أول شغل بيتسلّم للـ junior CTI analyst. والـ brand protection والـ digital risk protection كلهم معتمدين على فهم الـ underground ecosystem.
+
+<Aside type="caution" title="اقرا ده الأول">
+اقرا صفحة [Ethics, OPSEC and law](/cti-roadmap/ar/ethics/) قبل ما تبدأ. شراء داتا، أو التعامل مع threat actors، أو مسك داتا مسروقة، كلهم فيهم مخاطر قانونية.
+</Aside>
+
+## ذاكر من
+
+<Course title="Fundamentals of Dark Web Training" url="https://university.socradar.io/course/dark-web-training" by="SOCRadar" cost="free" time="~50 minutes">
+المصطلحات، والـ dark web بيشتغل إزاي وتدخله إزاي، وTor مقابل I2P مقابل Freenet، والـ marketplaces والـ forums، وجزء عن الـ myths والحقائق. معمول من فريق شغلته اليومية مراقبة الـ dark web.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [Dark Web Monitoring Crash Course](https://academy.socradar.io/course/darkweb-monitoring-crash-course)، من SOCRadar. مجاني، ساعة واحدة. اقتصاد الـ underground وأحدث أساليب الـ cybercriminals.
+- [Mastering Dark Web Intelligence for Cybersecurity Professionals](https://academy.socradar.io/course/mastering-dark-web-intelligence-for-cybersecurity-professionals)، من SOCRadar. تدريب عملي أطول وبشهادة: أدوات الجمع، والتحليل، وكتابة dark web intelligence reports.
+
+</details>
+
+## في الشغل
+
+في أدوار الـ digital risk protection والـ MSSP ده شغل يومي: تراجع credentials متسربة وstealer logs فيها أسماء عملاء، وتدور في الـ ransomware leak sites على أسماء العملاء، وتلاقي lookalike domains وصفحات phishing عشان تتعمل لها takedown. أهم مهارة إنك تتأكد من الـ leak قبل ما تنبّه حد: هل هو جديد، ولا داتا قديمة بتتباع تاني؟
+
+## هتتعلم إيه
+
+### الـ underground ecosystem
+
+الـ cybercrime forums، والـ initial access brokers، والـ ransomware groups، والـ leak sites، وأسواق الـ stealer logs والـ credentials، وخدمات الـ botnets، والـ malware-as-a-service، والـ ransomware-as-a-service، وتجارة الـ exploits، وسمسرة الداتا.
+
+### الجمع من الـ dark web
+
+اكتشاف المصادر، ومراقبة الـ forums والـ marketplaces، ومراقبة Telegram، والـ paste sites، ومراقبة تسريب الداتا، والجمع الأوتوماتيك، وموثوقية المصادر، والـ operational security.
+
+### الـ Credential intelligence
+
+الـ infostealer logs، والـ session cookies، والـ browser credentials، وإعادة استخدام الـ credentials، وتسريب إيميلات الشركات، وإعلانات الـ initial access، وسياق الـ authentication، والتأكد من الـ exposure.
+
+### الـ Brand protection intelligence
+
+انتحال الـ brand، والـ typosquatting، والـ phishing infrastructure، والحسابات المزيفة على السوشيال ميديا، والتطبيقات المزيفة، والـ domains الاحتيالية، والـ lookalike domains، وحملات الـ brand abuse.
+
+### الـ Ransomware intelligence
+
+profiles للـ ransomware groups، ومراقبة الـ leak sites، والـ victimology، والـ affiliates، والـ double extortion، والـ data exfiltration، والـ initial access brokers، والـ infrastructure بتاعة الـ ransomware.
+
+## المشروع: brand exposure investigation
+
+حقق في brand وهمي واكتب report فيه: الـ assets المكشوفة، والـ domains اللي بتنتحله، والـ credentials المتسربة، والـ threat actors المرتبطين، والأدلة من المصادر، وrisk assessment، والإجراءات اللي بتنصح بيها.
+
+اكتبه باللي اتعلمته في الخطوة 2. وخد بالك: إن داتا اتنشرت على مصدر underground ده مش دليل إنها جديدة أو صحيحة، ولا إن المؤسسة اتخترقت قريب.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تشرح الداتا المسروقة بتتحرك إزاي جوه اقتصاد الـ underground.
+- تقدر تتأكد من ادعاء exposure قبل ما تكتب عنه report.

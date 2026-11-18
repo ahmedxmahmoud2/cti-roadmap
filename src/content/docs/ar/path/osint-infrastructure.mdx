@@ -1,0 +1,57 @@
+---
+title: 3 · OSINT والـ Infrastructure Pivoting
+description: اجمع معلومات بشكل منظم، وحقق في الـ domains والـ IPs والـ certificates، واعمل pivot على infrastructure الخصم.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 4–5 أسابيع</span></div>
+
+هنا هتتعلم تجمع معلومات بطريقة منهجية. والـ infrastructure pivoting من أكتر المهارات اللي بتميّز الـ CTI analyst التقني.
+
+## ذاكر من
+
+<Course title="Open-Source Intelligence (OSINT) Fundamentals" url="https://academy.tcm-sec.com/courses/category/blue-team" by="TCM Security · Heath Adams" cost="paid">
+كورس OSINT عملي: تقنيات البحث، والبحث عن أشخاص ومؤسسات، والأدوات. جزء من اشتراك TCM Academy.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [A Cyber Threat Intelligence Self-Study Plan: Part 2](https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-2-d04b7a529d36)، من Katie Nickels. مجاني. الـ OSINT للـ CTI والـ pivoting على الـ infrastructure، ومعاه تمارين.
+- [Pivoting Across Infrastructure to Detect Unknown Threats](https://www.silentpush.com/video/pivoting-across-infrastructure-to-detect-unknown-threats/)، من Silent Push. workshop متسجل ومجاني عن ربط الـ domains والـ IPs والـ certificates، باستخدام الـ Community Edition المجانية بتاعتهم.
+- [Online Investigations Toolkit](https://bellingcat.gitbook.io/toolkit)، من Bellingcat. كتالوج أدوات بحث ومعاه شرح. استخدمه كمرجع.
+
+</details>
+
+## في الشغل
+
+مهمة عادية: الـ SOC يبعتلك domain أو IP مشبوه من alert. تعمله enrichment، وتعمل pivot منه، وتحدد إذا كان جزء من infrastructure أكبر، وترجّعلهم indicators مرتبطة ومعاها context، مش مجرد blocklist.
+
+## هتتعلم إيه
+
+### الـ OSINT التقني
+
+- **Domains:** التسجيل، والـ registrar، والـ nameservers، وتاريخ الـ DNS، والـ MX records، والـ SPF/DKIM/DMARC، والـ subdomains.
+- **IPs:** الـ ASN، والـ BGP، والـ hosting providers، والـ reputation، وحدود الـ geolocation.
+- **Certificates:** الـ Certificate Transparency logs، وتحليل الـ SAN، وإعادة استخدام الـ certificates.
+
+**الأدوات:** Shodan وCensys وFOFA وVirusTotal وurlscan.io وcrt.sh وSecurityTrails.
+
+### الـ Infrastructure pivoting
+
+إنك تلاقي domain واحد مشبوه مش كفاية. اتعلم تعمل pivot:
+
+- Domain → IP → domains تانية على نفس الـ IP.
+- Domain → certificate → domains مرتبطة.
+- IP → ASN والـ hosting provider.
+- الـ favicon hash أو الـ HTTP headers أو الـ TLS fingerprint (JARM وJA3/JA4) → servers شبهها.
+
+## المشروع: infrastructure hunting
+
+اختار APT campaign منشورة وابدأ من domain أو IP واحد معروف. اعمل pivot عن طريق الـ passive DNS والـ certificates والـ hosting، وارسم infrastructure graph، وعلّم أنهي روابط مؤكدة وأنهي محتملة. واكتب النتيجة باللي اتعلمته في الخطوة 2.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تبدأ من indicator واحد وتلاقي infrastructure مرتبطة لوحدك.
+- كل رابط في الـ graph بتاعك ليه دليل وconfidence واضح.

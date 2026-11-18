@@ -1,0 +1,71 @@
+---
+title: 1 · أساسيات الـ CTI والـ ATT&CK
+description: يعني إيه intelligence، والـ lifecycle بيشتغل إزاي، تكتب requirements إزاي، وتوصف سلوك الخصم بالـ ATT&CK.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 4–5 أسابيع</span></div>
+
+هنا هتبدأ تفهم الـ threat intelligence كعملية كاملة، مش مجرد feed فيه indicators. وهتتعلم ATT&CK كمان، لأنها اللغة اللي أي report هتقراه بعد كده مكتوب بيها.
+
+## ذاكر من
+
+<Course title="Cyber Threat Intelligence 101" url="https://arcx.io/courses/cyber-threat-intelligence-101" by="arcX" cost="free" time="4+ hours" arabic>
+الـ intelligence cycle ومستويات الـ intelligence وأهم الـ models، ومعاه أسئلة تدريب. فيه ترجمة عربي.
+</Course>
+
+<Course title="Using ATT&CK for Cyber Threat Intelligence" url="https://attack.mitre.org/resources/learn-more-about-attack/training/cti/" by="MITRE" cost="free" time="~4 hours">
+خمس modules قصيرة من فريق ATT&CK: إزاي تعمل mapping للـ reports على ATT&CK، وبعدين تقارن بين الـ groups. خده بعد CTI 101.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [A Cyber Threat Intelligence Self-Study Plan: Part 1](https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a)، من Katie Nickels. خطة قراية ومعاها تمارين.
+- [CTI Fundamentals for SOC Analysts](https://academy.socradar.io/course/cti-fundamentals-for-soc-analysts)، من SOCRadar. مجاني. مراجعة كويسة لو جاي من SOC.
+- [FIRST CTI SIG Curriculum](https://www.first.org/global/sigs/cti/curriculum/). الـ requirements وتقييم المصادر وتقنيات التحليل.
+- [Psychology of Intelligence Analysis](https://www.cia.gov/resources/csi/static/Pyschology-of-Intelligence-Analysis.pdf)، من Richards J. Heuer Jr. الكتاب الكلاسيكي عن الـ cognitive bias والـ Analysis of Competing Hypotheses.
+
+</details>
+
+**تمرين عملي:** [Cyber Threat Intelligence module](https://tryhackme.com/module/cyber-threat-intelligence) على TryHackMe. ابدأ بـ room اسمها Intro to Cyber Threat Intel، وخلّص بـ Trooper، اللي فيها بتعيد بناء campaign وتكشف الـ actor اللي وراها.
+
+## في الشغل
+
+أغلب الشغل بيبدأ بسؤال من حد تاني: "إحنا متأثرين بالـ campaign دي؟"، "المفروض نقلق من الـ group دي؟". أول شغلك إنك تحوّل السؤال ده لـ requirement واضح. ولما report جديد ينزل، بتعمله mapping على ATT&CK عشان الـ SOC يشوف يقدر يكتشفه ولا لأ.
+
+## هتتعلم إيه
+
+### فهم الـ CTI
+
+الفرق بين الـ CTI والـ threat hunting والـ incident response والـ forensics والـ OSINT. ومستويات الـ intelligence الأربعة:
+
+- **Strategic:** بيساعد الإدارة تاخد قرارات. مثال: هل القطاع المالي في منطقتنا بقى مستهدف أكتر من ransomware groups؟
+- **Operational:** الـ campaigns والـ threat actors. مثال: APT campaign بتستهدف بنوك بـ phishing وmalware مخصوص.
+- **Tactical:** الـ TTPs المستخدمة في الهجمة. مثال: group بتستخدم DLL side-loading عشان الـ persistence.
+- **Technical:** داتا جاهزة للاستخدام على طول: IPs وdomains وhashes وYARA rules.
+
+### الـ lifecycle والـ requirements
+
+الـ planning والـ direction، والـ collection، والـ processing، والـ analysis، والـ dissemination، والـ feedback. اتعلم تكتب Priority Intelligence Requirements (PIRs) وتقسمها لأسئلة أصغر تقدر تجمع ليها معلومات.
+
+مثال PIR: *إيه الـ APT groups اللي بتستهدف المؤسسات المالية في الشرق الأوسط؟* الأسئلة الأصغر: أنهي groups، وأنهي malware، وإيه الـ infrastructure، وأنهي initial access techniques، وإيه آخر campaigns.
+
+### التحليل ودرجة الثقة
+
+الـ source reliability، والـ information credibility، والـ confidence levels، والـ intelligence gaps، والـ Analysis of Competing Hypotheses (ACH). دايماً افصل بين اللي إنت شفته فعلاً واللي إنت بتقدّره.
+
+### MITRE ATT&CK
+
+الـ tactics والـ techniques والـ sub-techniques والـ groups والـ software والـ campaigns. استخدم [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) عشان تعمل technique layer لـ group. إن هجمتين فيهم technique واحدة مشتركة ده مش دليل إنهم من نفس الـ group.
+
+## المشروع: اعمل mapping لـ report
+
+خد APT report منشور من أي vendor. اكتب الـ PIRs اللي بيجاوب عليها، واعمل mapping لكل سلوك فيه على ATT&CK، واعمل Navigator layer. وعلّم على الجمل اللي في الـ report: أنهي حقائق وأنهي تقديرات.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تحوّل سؤال من الـ business لـ PIRs وأسئلة أصغر.
+- تقدر تعمل mapping لـ report على ATT&CK من غير تخمين.
+- تقدر تكتب حكم ومعاه confidence level وتشرح ليه.

@@ -1,0 +1,69 @@
+---
+title: 8 · الـ Platforms والـ Automation
+description: افهم داتا الـ intelligence بتتمثل وتتخزن وتترابط وتتشارك إزاي، وابني الـ pipeline بتاعك.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> حوالي 6 أسابيع</span></div>
+
+غالباً هتستخدم platform زي MISP أو OpenCTI من أول شغل. هنا هتروح أبعد: تفهم الداتا بتدخل إزاي، وبتتعالج وتترابط إزاي، وبتتحول لـ intelligence ينفع يتستخدم إزاي.
+
+## ذاكر من
+
+<Course title="STIX and TAXII documentation" url="https://oasis-open.github.io/cti-documentation/" by="OASIS" cost="free">
+الـ specifications ومعاها مقدمات سهلة وأمثلة. الـ STIX هو الطريقة اللي الـ CTI بيتمثل بيها، والـ TAXII هو الطريقة اللي بيتبادل بيها.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [MISP documentation and training](https://www.misp-project.org/documentation/)، من MISP project وCIRCL، ومعاها PyMISP.
+- [OpenCTI documentation](https://docs.opencti.io/)، من Filigran. الـ data model والـ connectors والـ API.
+- [OpenCTI 101](https://filigran.io/services/filigran-academy/)، من Filigran Academy. مدفوع. الـ learning path الرسمي من الشركة اللي عاملة OpenCTI.
+
+</details>
+
+**تمرين عملي:** الـ rooms بتاعة [OpenCTI](https://tryhackme.com/room/opencti) وMISP في [Cyber Threat Intelligence module](https://tryhackme.com/module/cyber-threat-intelligence) على TryHackMe بتديك platform شغالة تستكشفها، من غير ما تحتاج تسطّب حاجة.
+
+## في الشغل
+
+شغل الـ platforms أغلبه hygiene: إدخال الـ feeds، وشيل التكرار، وexpire للـ indicators القديمة، وبعت اللي لسه صالح للـ SIEM أو الـ EDR. والـ scripts والـ connectors الصغيرة اللي بتوفر على الفريق ساعات من أكتر الشغل اللي بيتقدّر في أي CTI team.
+
+## هتتعلم إيه
+
+### الـ Intelligence data modeling
+
+STIX 2.1 وTAXII 2.1 والـ MISP data model، والـ STIX objects والـ relationships، والـ observables والـ indicators، وobjects الـ malware والـ threat actor والـ campaign والـ report، والـ confidence والـ validity.
+
+### MISP
+
+الـ events والـ attributes والـ objects والـ galaxies والـ taxonomies والـ warning lists والـ correlation والـ feeds والـ sharing groups والـ API integration والـ PyMISP.
+
+### OpenCTI
+
+الـ knowledge graph، والـ threat actor modeling، وعلاقات الـ campaigns، والـ intrusion sets، والـ observables والـ indicators، والـ reports، والـ external references، والـ connectors، والـ ingestion pipelines، والـ import والـ export، وتحليل الـ graph، والـ API، والـ STIX 2.1 integration.
+
+### الـ CTI automation
+
+بـ Python ابني: pipelines لجمع الـ IOCs وعمل enrichment ليها، وthreat feed integration، وdeduplication، وnormalisation، وexpiration management، وconfidence scoring، وautomated correlation، وreport generation، وintegration مع OpenCTI وMISP.
+
+### جودة داتا الـ CTI
+
+الـ indicators المتكررة، والـ false positives، والـ IOCs القديمة، والـ infrastructure المنتهية، والـ attribution الغلط، وموثوقية المصادر، ومصدر الداتا، والـ confidence، وسحب الـ indicators، والتأكد من الـ relationships. عمرك ما تعتبر IOC خبيث عشان هو موجود في feed وخلاص.
+
+## المشروع: ابني الـ CTI pipeline بتاعك
+
+1. **مصادر خارجية:** OSINT وthreat feeds وreports وAPIs.
+2. **الجمع والمعالجة بـ Python:** parsing وnormalisation وdeduplication.
+3. **Enrichment وcorrelation:** الـ reputation والعلاقات والـ context.
+4. **MISP** لإدارة الـ IOCs.
+5. **OpenCTI** كـ knowledge graph.
+6. **مخرجات تشغيلية:** SIEM وXDR وthreat hunting وreports للعملاء.
+
+لو اتعمل صح، ده من أقوى المشاريع في الـ portfolio بتاعك.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تعمل model لـ actor وcampaign والـ indicators بتاعتهم في STIX.
+- الـ pipeline بتاعك بيدخّل الداتا ويشيل التكرار ويعمل enrichment ويعمل expire لوحده.

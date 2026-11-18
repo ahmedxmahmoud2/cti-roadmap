@@ -1,0 +1,71 @@
+---
+title: 7 · Threat Hunting وDetection Engineering
+description: اربط الـ CTI بشغل الـ SOC عن طريق تحويل الـ intelligence لـ hunts وdetection rules.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 5–6 أسابيع</span></div>
+
+الـ intelligence اللي بتطلّعه لازم يبقى قابل للاستخدام في الـ detection والـ threat hunting. الخطوة دي بتربط الـ CTI بشغل الـ SOC.
+
+## ذاكر من
+
+<Course title="TTP-Based Threat Hunting and Detection Engineering" url="https://attack.mitre.org/resources/learn-more-about-attack/training/threat-hunting" by="MITRE" cost="free">
+ست modules من فريق ATT&CK: أساسيات الـ hunting، وإزاي تبني hypotheses، والداتا اللي محتاجها، والـ collection gaps، وتنفيذ واختبار الـ analytics، وتشغيل الـ hunt.
+</Course>
+
+<Course title="eCTHPv2 Prep" url="https://netriders.academy/courses/threat-hunting-professional/" by="Netriders" arabic>
+الـ threat hunting بالعربي: المصطلحات، والـ threat intelligence، والـ IOCs والـ YARA، والـ hunting hypotheses، وبعدين الـ hunting على الـ network والـ endpoint.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [SigmaHQ rule repository](https://github.com/SigmaHQ/sigma). آلاف الـ detection rules من الـ community. اقراها، وبعدين اكتب بتاعتك.
+- [CompTIA CySA+ شرح عربي](https://netriders.academy/courses/cysa/)، من Netriders. الـ security operations والتحليل بالعربي، مفيد لو جاي من ناحية الـ SOC.
+
+</details>
+
+## في الشغل
+
+بعد أي report مهم، بتدّي فريق الـ hunting hypotheses مبنية على الـ TTPs، وساعات بتكتب الـ Sigma rule بنفسك. الجزء المفيد هو الـ feedback: إيه اللي اشتغل، وإيه اللي طلع noise، وده بيقولك إيه عن الـ threat.
+
+## هتتعلم إيه
+
+### منهجية الـ Threat hunting
+
+الـ hunting المبني على hypothesis، وعلى IOCs، وعلى TTPs، وعلى السلوك، وعلى الـ anomalies، والـ threat-informed defense.
+
+### الـ Detection engineering
+
+الـ Sigma والـ YARA والـ Suricata rules. ولغات الـ query: KQL وSPL وEQL وCrowdStrike FQL.
+
+### تحليل الـ Logs
+
+- **Windows:** الـ Sysmon، والـ security logs، والـ PowerShell logs، والـ Defender logs، والـ process creation، وأحداث الـ authentication.
+- **Network:** الـ DNS والـ proxy والـ firewall والـ Zeek logs، والـ Suricata alerts، والـ NetFlow.
+
+### المنصات
+
+Wazuh وSecurity Onion وSplunk وMicrosoft Sentinel وCrowdStrike Falcon وElastic Security.
+
+## المشروع: hunting package
+
+اختار APT group وطلّع من الـ TTPs بتاعتها خمس hunting hypotheses. مثال: *الخصم ممكن يستخدم PowerShell عشان ينفذ commands متشفرة ويعمل persistence.*
+
+لكل hypothesis:
+
+- حدد الـ telemetry والـ data sources اللي محتاجها.
+- اكتب الـ hunting query.
+- جربها على logs في الـ lab وحلل النتايج.
+- حدد الـ false positives.
+- اكتب الـ detection logic.
+- اعملها mapping على ATT&CK.
+
+متقفش عند "الـ APT دي بتستخدم PowerShell". لازم تعرف تكتشفها.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تحوّل TTPs بتاعة actor لـ hypotheses وqueries وSigma rules.
+- تقدر تشرح الـ false positives اللي الـ rules بتاعتك هتطلّعها.

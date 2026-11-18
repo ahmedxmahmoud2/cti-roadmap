@@ -1,0 +1,66 @@
+---
+title: 5 · Threat Actor Profiling وTracking
+description: اعمل profiles للـ threat actors، وتابع الـ APT groups على مدار الوقت، واعمل attribution assessments مبنية على أدلة.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 5–6 أسابيع</span></div>
+
+هنا بتبدأ تشتغل كـ threat intelligence researcher. الخطوة دي بتجمع كل اللي فات: ATT&CK من الخطوة 1، والكتابة من الخطوة 2، والـ infrastructure من الخطوة 3، ومصادر الـ underground من الخطوة 4.
+
+## ذاكر من
+
+<Course title="The Threat Actor Profile Guide for CTI Analysts" url="https://www.curatedintel.org/2023/07/the-threat-actor-profile-guide-for-cti.html" by="Curated Intelligence" cost="free">
+مقدمة بـ template لعمل profiles للـ threat actors، مكتوبة للـ analysts اللي لسه بادئين. موجودة كمان على [GitHub](https://github.com/curated-intel/Threat-Actor-Profile-Guide).
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [A guide to threat actor profiling: a deliverable-first approach](https://feedly.com/ti-essentials/posts/a-guide-to-threat-actor-profiling-a-deliverable-first-approach)، من Feedly. مجاني. profiles الناس بتستخدمها فعلاً، ومعاه [template](https://feedly.notion.site/Threat-Actor-Profile-Template-32c6b74996a380e091e2ec15d2c3fde1) مجاني.
+- [Threat Actor Profiling: Know Your Enemy](https://www.antisyphontraining.com/?p=54619)، من Antisyphon Training. مدفوع، workshop لايف 4 ساعات ومعاه labs.
+- [Threat Actor Profiling](https://academy.brandefense.io/course/threat-actor-profiling)، من Brandefense Academy. مدفوع.
+
+</details>
+
+## في الشغل
+
+بتحافظ على profiles للـ actors اللي تهم مؤسستك أو قطاع عملائك، وبتحدّثها كل ما يطلع reporting جديد. ولما الإدارة تسأل "مين الـ group دي ونقلق منها ولا لأ؟"، الـ profile ده هو إجابتك.
+
+## هتتعلم إيه
+
+### الـ Threat actor profiling
+
+لكل actor بتتابعه، اعمل profile فيه: الأسماء التانية بتاعته، والأصل أو الجهة الداعمة المشتبه فيها، والدافع، والقطاعات والدول المستهدفة، والـ campaigns المعروفة، والـ malware families، والـ infrastructure، والـ TTPs، والأنماط التشغيلية، والنشاط التاريخي، وآخر التطورات.
+
+### الـ APT tracking
+
+متابعة مستمرة، مش مجرد متابعة أخبار. تابع الـ campaigns الجديدة، والـ infrastructure الجديدة، والـ malware الجديد، والتغيير في الـ TTPs، والتغيير في الضحايا، والـ vulnerabilities اللي بيستغلها، وطرق الـ initial access الجديدة، والتغيير في الـ C2 infrastructure، وعلاقته بـ groups تانية.
+
+### الـ Attribution analysis
+
+من أصعب حاجات الـ CTI. ادرس الـ attribution التقني وعلى مستوى الـ infrastructure والسلوك، وتشابه كود الـ malware، والتحليل اللغوي، والأنماط التشغيلية، والـ false flag operations، ودرجة الثقة في الـ attribution، والفرضيات المتنافسة.
+
+اعرف الفرق بين attribution مؤكد وتقديرات بـ high وmoderate وlow confidence. وعمرك ما تنسب campaign لـ group عشان الـ report اللي بتقراه عمل كده. راجع الأدلة وافهم الـ attribution مبني على إيه.
+
+### الـ Campaign clustering
+
+اربط الهجمات ببعض عن طريق infrastructure مشتركة، وmalware مشترك، وC2 configuration شبه بعض، وTTPs شبه بعض، وتداخل في الضحايا، وتوقيتات مترابطة، وartifacts تشغيلية مشتركة.
+
+## المشروع: تتبع actor لمدة 30 يوم
+
+اختار APT group، مثلاً واحدة بتستهدف الشرق الأوسط (شوف [MENA threat landscape](/cti-roadmap/ar/mena/)). تابعها 30 يوم:
+
+- سجّل كل campaign جديدة وكل infrastructure جديدة.
+- راجع الـ malware families بتاعتها.
+- قارن الـ TTPs القديمة بالجديدة.
+- سجّل أي تغيير في الاستهداف.
+- اكتب intelligence update كل أسبوع.
+
+في الآخر اكتب tracking report: إيه اللي اتغير، وإيه اللي فضل زي ما هو، وإيه الأدلة وإيه التقديرات.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تعمل actor profile كامل بمصادر ودرجة ثقة.
+- تقدر تشرح أي ادعاء attribution مبني على إيه، ويستاهل درجة ثقة قد إيه.

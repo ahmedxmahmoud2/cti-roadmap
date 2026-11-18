@@ -1,0 +1,57 @@
+---
+title: 2 · قراءة وكتابة الـ Intelligence
+description: اقرا الـ vendor reports بعين ناقدة، واكتب intelligence الناس تقدر تتصرف على أساسه.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 2–3 أسابيع، وبعدها كمّل تمرين كل أسبوع</span></div>
+
+الكتابة هي المنتج النهائي للـ CTI. أي finding محدش فهمه أو محدش قدر يتصرف عليه يبقى شغل ضايع. الخطوة دي جاية بدري مقصود: كل مشروع بعد كده آخره حاجة إنت بتكتبها.
+
+## ذاكر من
+
+<Course title="Threat Landscape Reports (TLRs)" url="https://www.justhacking.com/uc/uc-threat-landscape-reports-tlrs/" by="Just Hacking Training · Jennifer Funk" cost="free">
+challenge قصير ومجاني من CTI operations manager: تبدأ من احتياجات الـ business، وتبني report يساعد الإدارة تاخد قرار، وتعمل واحد لشركة وهمية.
+</Course>
+
+<details>
+<summary>عايز تزوّد؟ (اختياري)</summary>
+
+- [Structuring Cyber Threat Intelligence Assessments](https://www.robertmlee.org/?p=443)، من Robert M. Lee. إزاي تصيغ الـ confidence والـ estimative language في الـ assessments.
+- [Cyber Intelligence Production](https://cloud.google.com/learn/security/mandiant-academy-courses/cip)، من Mandiant Academy. كورس on-demand مدته 8 ساعات عن الـ intelligence reports والـ briefings.
+
+</details>
+
+## في الشغل
+
+أكتر حاجات هتكتبها: advisories قصيرة عن campaign أو vulnerability جديدة، وملخصات أسبوعية للإدارة، وreports للعملاء. وغالباً بتتكتب تحت ضغط وقت، وعشان كده الـ BLUF والـ confidence الواضح مهمين: القارئ بياخد قراره من أول فقرة.
+
+## هتتعلم إيه
+
+### تقرا الـ reports بعين ناقدة
+
+أغلب اللي هيوصلك reports كاتبها ناس تانية. مع كل واحد اسأل:
+
+- هما شافوا إيه فعلاً، وبيقدّروا إيه؟
+- إيه الدليل اللي الـ attribution مبني عليه؟
+- الداتا قديمة قد إيه، وكان مكتوب لمين؟
+- ده معناه إيه بالنسبة *لمؤسستي* أو للعميل بتاعي؟
+
+اتمرن على reports حقيقية. [APTnotes](https://github.com/aptnotes/data) جامع APT reports منشورة من سنين.
+
+### الكتابة
+
+- **BLUF (Bottom Line Up Front):** الخلاصة واللي المفروض القارئ يعمله بييجوا الأول.
+- **Estimative language:** كلمات زي *likely* و*almost certainly* بمعاني متفق عليها، ومعاها confidence level واضح.
+- **الجمهور:** executive brief والـ SOC alert والـ technical report تلات documents مختلفين.
+- **الحقائق مقابل التقديرات:** لازم يبقوا واضحين للقارئ دايماً.
+
+## المشروع: أعد كتابة report
+
+خد vendor report طويل واكتب منه حاجتين: brief صفحة واحدة لمدير (BLUF، ومعناه إيه، والمفروض يتعمل إيه)، وnote تقني قصير لفريق الـ SOC (الـ TTPs والـ indicators وأفكار للـ detection). وخلّي الاتنين صريحين في الـ confidence.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تلخص أي report في تلات جمل من غير ما يضيع الحكم الأساسي.
+- كتابتك بتفصل الحقائق عن التقديرات وبتقول درجة الثقة.

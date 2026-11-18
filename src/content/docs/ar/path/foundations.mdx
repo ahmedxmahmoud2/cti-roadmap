@@ -1,0 +1,72 @@
+---
+title: 0 · الأساسيات التقنية
+description: Networking وأساسيات الـ Security والـ Operating Systems والـ Scripting، عشان تفهم الهجمة نفسها مش بس وصفها.
+---
+
+import Course from '../../../../components/Course.astro';
+
+<div class="ctir-meta"><span><strong>المدة:</strong> 3–6 شهور لو بادئ من الصفر، و2–4 أسابيع لو محتاج مراجعة بس</span></div>
+
+قبل الـ CTI لازم تكون فاهم تقنياً كفاية إنك تتابع الهجمة نفسها، مش بس تقرا وصفها. كل جزء تحت ليه كورس واحد. خلّصه من أوله لآخره وبعدين كمّل.
+
+لو إنت شغال أصلاً في SOC أو IT أو Pentesting، عدّي على الخطوة دي بسرعة وكمّل الناقص بس.
+
+## 1. Networking
+
+<Course title="CompTIA Network+ (N10-009) full video course" url="https://www.professormesser.com/?p=632187" by="Professor Messer" cost="free" time="87 videos · ~13 hours">
+منهج Network+ كله ببلاش. اتفرج عليه كله بالترتيب.
+</Course>
+
+<Course title="CompTIA Network+ شرح عربي" url="https://www.youtube.com/results?search_query=Sameh+Ramadan+CompTIA+Network%2B" by="Sameh Ramadan" cost="free" time="27 lessons · ~15.5 hours" arabic>
+كورس Network+ كامل بالعامية المصرية على قناة Sameh Ramadan Tech على يوتيوب.
+</Course>
+
+**بعد الكورس**، اتأكد إنك فاهم مواضيع الـ Networking اللي الـ CTI بيعتمد عليها أكتر. هتقابلها تاني في الخطوات الجاية:
+
+- الـ DNS tunneling والـ fast flux DNS والـ domain generation algorithms (DGA).
+- الـ Domain fronting.
+- الـ TLS fingerprinting: JA3 وJA4 وJARM.
+- أنماط اتصال الـ C2.
+
+**تمرين:** التمارين اللي على [Malware-Traffic-Analysis.net](https://www.malware-traffic-analysis.net/training-exercises.html) عبارة عن PCAPs حقيقية لإصابات ومعاها الحلول. استخدم Wireshark.
+
+## 2. أساسيات الـ Security
+
+<Course title="CompTIA Security+ (SY0-701) full video course" url="https://www.professormesser.com/?p=631902" by="Professor Messer" cost="free">
+الـ threats والـ attacks والـ architecture والـ operations والـ governance.
+</Course>
+
+<Course title="CompTIA Security+ شرح عربي" url="https://netriders.academy/courses/security/" by="Netriders · Ahmed Sultan" cost="free" time="52 lessons" arabic>
+منهج Security+ كامل بالعربي ومعاه labs. ده إصدار SY0-601، وموجود ببلاش على قناة Netriders على يوتيوب. كورس SY0-701 الأحدث موجود على موقعهم.
+</Course>
+
+## 3. الـ Operating Systems
+
+<Course title="Pre Security learning path" url="https://tryhackme.com/path/outline/presecurity" by="TryHackMe" cost="freemium">
+أساسيات Linux وWindows بشكل عملي من المتصفح.
+</Course>
+
+اتأكد إنك فاهم الـ processes والـ services والـ scheduled tasks، والـ registry والـ event logs في Windows، والـ PowerShell، والـ permissions والـ cron والـ logs في Linux، وكل system بيحط الـ persistence فين.
+
+## 4. الـ Scripting
+
+<Course title="Automate the Boring Stuff with Python" url="https://automatetheboringstuff.com/" by="Al Sweigart" cost="free">
+متاح تقراه أونلاين ببلاش. اقرا النص الأول، وبعدين الفصول بتاعة الـ web scraping والـ JSON والـ CSV.
+</Course>
+
+مش محتاج تبقى software engineer. محتاج تعرف تكلم API، وتعمل parse لـ JSON، وتعمل automate للشغل اللي بيتكرر عندك.
+
+## في الشغل
+
+في شغل الـ CTI مش هتظبط routers. هتقرا PCAPs جاية لك من الـ incident response، وتحدد إذا كان domain شكله fast flux أو DGA، وتقرا PowerShell من script خبيث، وتكتب script صغير بدل ما تعمل 200 lookup بإيدك. وده اللي الخطوة دي معمولة عشانه.
+
+## المشروع: IOC enrichment tool
+
+اعمل tool بـ Python تاخد IP أو domain أو hash، وتتأكد إنه صحيح، وتكلم الـ APIs بتاعة VirusTotal وAbuseIPDB، وتطلع report بصيغة JSON. ارفعها على GitHub ومعاها README.
+
+## تقدر تنقل للخطوة الجاية لما
+
+- تقدر تشرح إيه اللي بيحصل، protocol بـ protocol، لما تفتح موقع.
+- تقدر تتابع TCP أو HTTP stream في PCAP.
+- تعرف Windows وLinux بيحطوا الـ processes والـ persistence والـ logs فين.
+- الـ enrichment tool بتاعتك شغالة.
