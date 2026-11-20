@@ -16,11 +16,13 @@ export default defineConfig({
 				ar: { label: 'العربية', lang: 'ar', dir: 'rtl' },
 			},
 			social: [
+				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/ahmed-mahmoud-603356258/' },
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/ahmedxmahmoud2/cti-roadmap' },
 			],
 			editLink: {
 				baseUrl: 'https://github.com/ahmedxmahmoud2/cti-roadmap/edit/main/',
 			},
+			favicon: '/favicon.svg',
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{ label: 'Start here', translations: { ar: 'ابدأ من هنا' }, slug: 'index' },

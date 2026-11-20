@@ -4,6 +4,8 @@ A step-by-step Cyber Threat Intelligence path, from zero to advanced CTI analyst
 
 **Site:** https://ahmedxmahmoud2.github.io/cti-roadmap/
 
+**Author:** [Ahmed Mahmoud](https://www.linkedin.com/in/ahmed-mahmoud-603356258/), Threat Intelligence Analyst
+
 ## Run locally
 
 ```sh

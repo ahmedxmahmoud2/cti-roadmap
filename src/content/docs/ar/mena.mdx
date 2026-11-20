@@ -1,0 +1,42 @@
+---
+title: تهديدات المنطقة (MENA)
+description: مصادر وcase studies للتهديدات اللي بتستهدف الشرق الأوسط وشمال أفريقيا.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+أغلب تدريبات الـ CTI المنشورة بتستخدم أمثلة من أمريكا وأوروبا. الصفحة دي بتجمع مصادر عن التهديدات اللي بتستهدف فعلاً المؤسسات في الشرق الأوسط وشمال أفريقيا، عشان تتمرن عليها.
+
+## Case studies تتمرن عليها
+
+- **MuddyWater (ESET، ديسمبر 2025).** [MuddyWater: Snakes by the riverbank](https://www.welivesecurity.com/en/eset-research/muddywater-snakes-riverbank/) بيغطي campaign أغلبها ضد مؤسسات إسرائيلية، وفيها ضحية مصري مؤكد، وmalware جديد، وعملية مشتركة مع subgroup من OilRig. case study كويسة لـ [مشروع تتبع الـ actor](/cti-roadmap/ar/path/actor-profiling/).
+- **أصل اسم MuddyWater.** الـ blog بتاع Palo Alto Unit 42 سنة 2017 بعنوان *Muddying the Water: Targeted Attacks in the Middle East* هو اللي الاسم جه منه. اقراه جنب الـ reporting الحديث وقارن الـ actor والأدوات بتاعته اتغيروا إزاي.
+
+## Landscape reports
+
+- **CloudSEK، [Middle East Cyber Threat Landscape 2025–2026](https://cdn.prod.website-files.com/635e632477408d12d1811a64/6aa9246a81909ec612530547_Upload_CloudSEK_Middle_East_Cyber_Threat_Landscape_2025-2026.pdf).** اتجاهات الـ ransomware والـ hacktivism حسب كل دولة.
+- **جامعة نايف العربية للعلوم الأمنية، *تقرير اتجاهات برمجيات الفدية في الدول العربية 2025*.** الضحايا والـ groups والدول، مبني على داتا الـ leak sites وتقارير الـ incidents.
+- **Microsoft Digital Defense Report.** report عالمي وفيه تقسيم إقليمي للشرق الأوسط.
+
+<Aside type="caution" title="اقرا الأرقام بعين ناقدة">
+أعداد الـ "indicators" أو الـ "feeds" اللي بيطلّعها الـ vendors مش incidents مؤكدة، وادعاءات الـ leak sites مش breaches متأكد منها. إنك تعيد كتابة أرقام landscape report وتوضح حدودها تمرين كويس على تقييم المصادر.
+</Aside>
+
+## Vendor research بيغطي المنطقة كويس
+
+- ESET Research وCheck Point Research وKaspersky GReAT وPalo Alto Unit 42 وGroup-IB وMicrosoft Threat Intelligence وGoogle Threat Intelligence (Mandiant).
+- Citizen Lab وAmnesty Tech للـ spyware اللي بيستهدف الصحفيين والمجتمع المدني في المنطقة. بداية كويسة للـ analysts الجايين من الصحافة أو السياسة.
+
+## الـ CERTs والجهات الوطنية
+
+- **مصر:** [EG-CERT](https://egcert.eg/about-us/) (تابع للجهاز القومي لتنظيم الاتصالات)، وبينشر alerts ويستقبل بلاغات الـ incidents.
+- **السعودية:** [الهيئة الوطنية للأمن السيبراني](https://nca.gov.sa/en/services/information-enrichment/) عندها خدمة information enrichment لمشاركة الـ indicators.
+- **المنطقة:** OIC-CERT بيربط الـ CERTs الوطنية في الدول الأعضاء، ومنهم CERT-SA وQ-CERT وOCERT وJO-CERT.
+
+## أسامي actors هتقابلها
+
+الـ vendors بيسموا نفس الـ actor بأسامي مختلفة. اتعلم تربط الأسامي ببعض، وعمرك ما تفترض إن اسمين هما نفس الـ group من غير ما تتأكد.
+
+- **MuddyWater:** معروف كمان باسم Mango Sandstorm وSeedworm.
+- **OilRig / APT34:** ومعاه subgroups مرتبطة زي Lyceum.
+- فيه actors تانية إيرانية، ومدعومة من دول تانية، ومدفوعة مادياً بتستهدف المنطقة. والـ ransomware groups وجماعات الـ hacktivism هما الأكتر من ناحية العدد.
